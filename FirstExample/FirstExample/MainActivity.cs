@@ -14,6 +14,15 @@ namespace FirstExample
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            int count = 0;
+            var textView = FindViewById<TextView>(Resource.Id.textView1);
+            var button = FindViewById<Button>(Resource.Id.button1);
+
+            button.Click += delegate {
+                count++;
+                textView.Text = "Vajutasid nuppu " + count + " korda!";
+            };
         }
     }
 }
